@@ -1,4 +1,4 @@
-object MainForm: TcaMainForm
+object caMainForm: TcaMainForm
   Left = 989
   Height = 291
   Top = 230

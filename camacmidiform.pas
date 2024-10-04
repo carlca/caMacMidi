@@ -31,7 +31,6 @@ type
   private
     { private declarations }
     FOutputPort: longword;
-    FMidi: TcaMidiImpl;
     function CFStringToStr(AString: CFStringRef): string;
     function CreateMIDIOutputPort(Client: longword): boolean;
     function GetDestination(Index: integer; out Destination: MIDIEndpointRef): boolean;
@@ -63,8 +62,8 @@ var
   Result: OSStatus;
   inputPort: longword = 0;
 begin
-  FMidi.Intf.GetDevices(ioIn, MidiInDevices.Items);
-  FMidi.Intf.GetDevices(ioOut, MidiOutDevices.Items);
+  Midi.GetDevices(ioIn, MidiInDevices.Items);
+  Midi.GetDevices(ioOut, MidiOutDevices.Items);
 
   Result := MIDIClientCreate(CFSTR('MIDI CLIENT'), nil, nil, midiClient);
   if (Result <> noErr) then
@@ -80,13 +79,11 @@ end;
 
 procedure TcaMainForm.FormCreate(Sender: TObject);
 begin
-  FMidi := TcaMidiImpl.Create;
   FOutputPort := 0;
 end;
 
 procedure TcaMainForm.FormDestroy(Sender: TObject);
 begin
-  FMidi.Free;
 end;
 
 procedure TcaMainForm.SendButtonClick(Sender: TObject);

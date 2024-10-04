@@ -14,6 +14,9 @@ type
     procedure SendPGMMessage(Channel, PGM: Byte);
   end;
 
+var
+  Midi: IcaMidiInterface;
+
 implementation
 
 end.
