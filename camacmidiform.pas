@@ -9,7 +9,7 @@ interface
 uses
   Classes, ExtCtrls, SpinEx, StdCtrls, SysUtils, FileUtil, Forms, Controls, Graphics,
   Dialogs, CheckLst, MacOsAll,
-  caDbg, caMidiImpl, caMidiIntf, caMidiTypes;
+  caDbg, caMidi, caMidiIntf, caMidiTypes;
 
 type
 

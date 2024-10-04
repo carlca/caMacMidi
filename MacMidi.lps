@@ -18,8 +18,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="caMacMidiForm"/>
-        <TopLine Value="40"/>
-        <CursorPos Y="84"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="16" Y="12"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -176,9 +176,8 @@
       </Unit20>
       <Unit21>
         <Filename Value="midiintf/camidi.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="110" Y="8"/>
+        <CursorPos X="70" Y="3"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit21>
@@ -230,7 +229,7 @@
         <UsageCount Value="10"/>
       </Unit28>
     </Units>
-    <JumpHistory Count="10" HistoryIndex="9">
+    <JumpHistory Count="11" HistoryIndex="10">
       <Position1>
         <Filename Value="camacmidiform.pas"/>
         <Caret Line="38" Column="43" TopLine="15"/>
@@ -271,6 +270,10 @@
         <Filename Value="camacmidiform.pas"/>
         <Caret Line="67" Column="7" TopLine="44"/>
       </Position10>
+      <Position11>
+        <Filename Value="midiintf/camidi.pas"/>
+        <Caret Line="3" Column="70"/>
+      </Position11>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
