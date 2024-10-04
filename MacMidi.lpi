@@ -44,16 +44,16 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="umacmidi.pas"/>
+        <Filename Value="camacmidiform.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="MainForm"/>
+        <ComponentName Value="caMainForm"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uMacMidi"/>
+        <UnitName Value="caMacMidiForm"/>
       </Unit1>
       <Unit2>
-        <Filename Value="udbg.pas"/>
+        <Filename Value="camacmidiform.lfm"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="uDbg"/>
       </Unit2>
     </Units>
   </ProjectOptions>
@@ -64,9 +64,13 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="midiintf"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

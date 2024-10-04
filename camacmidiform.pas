@@ -1,4 +1,4 @@
-unit uMacMidi;
+unit caMacMidiForm;
 
 {$mode objfpc}{$H+}
 
@@ -9,13 +9,13 @@ interface
 uses
   Classes, ExtCtrls, SpinEx, StdCtrls, SysUtils, FileUtil, Forms, Controls, Graphics,
   Dialogs, CheckLst, MacOsAll,
-  uDbg;
+  caDbg, caMidiImpl, caMidiIntf, caMidiTypes;
 
 type
 
   { TMainForm }
 
-  TMainForm = class(TForm)
+  TcaMainForm = class(TForm)
     CCLabel: TLabel;
     PGMLabel: TLabel;
     PGMSpin: TSpinEditEx;
@@ -25,20 +25,25 @@ type
     ButtonPanel: TPanel;
     CCSpin: TSpinEditEx;
     procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure SendButtonClick(Sender: TObject);
   private
     { private declarations }
     FOutputPort: longword;
+    FMidi: TcaMidiImpl;
     function CFStringToStr(AString: CFStringRef): string;
     function CreateMIDIOutputPort(Client: longword): boolean;
-    procedure PopulateDeviceList(ListBox: TCheckListBox; in_out: string);
-    procedure SendCombinedCCAndPGM(Channel, CCValue, PGMValue: byte);
+    function GetDestination(Index: integer; out Destination: MIDIEndpointRef): boolean;
+    procedure SendCCMidiMessage(Channel, CCValue: byte);
+    procedure SendPGMMidiMessage(Channel, PGMValue: byte);
+    procedure SendMidiPacket(Destination: MIDIEndpointRef; Packet: MIDIPacket);
   public
     { public declarations }
   end;
 
 var
-  MainForm: TMainForm;
+  MainForm: TcaMainForm;
 
 implementation
 
@@ -50,16 +55,16 @@ procedure midiInputCallback(pktlist: MIDIPacketListPtr; readProcRefCon: Pointer;
 begin
 end;
 
-{ TMainForm }
+{ TcaMainForm }
 
-procedure TMainForm.FormActivate(Sender: TObject);
+procedure TcaMainForm.FormActivate(Sender: TObject);
 var
-  midiClient: longword;
+  midiClient: longword = 0;
   Result: OSStatus;
-  inputPort: longword;
+  inputPort: longword = 0;
 begin
-  PopulateDeviceList(MidiInDevices, 'MidiIn');
-  PopulateDeviceList(MidiOutDevices, 'MidiOut');
+  FMidi.Intf.GetDevices(ioIn, MidiInDevices.Items);
+  FMidi.Intf.GetDevices(ioOut, MidiOutDevices.Items);
 
   Result := MIDIClientCreate(CFSTR('MIDI CLIENT'), nil, nil, midiClient);
   if (Result <> noErr) then
@@ -73,12 +78,24 @@ begin
     ShowMessage('Failed to create MIDI output port');
 end;
 
-procedure TMainForm.SendButtonClick(Sender: TObject);
+procedure TcaMainForm.FormCreate(Sender: TObject);
 begin
-  SendCombinedCCAndPGM(0, CCSpin.Value and $FF, PGMSpin.Value and $FF);
+  FMidi := TcaMidiImpl.Create;
+  FOutputPort := 0;
 end;
 
-function TMainForm.CFStringToStr(AString: CFStringRef): string;
+procedure TcaMainForm.FormDestroy(Sender: TObject);
+begin
+  FMidi.Free;
+end;
+
+procedure TcaMainForm.SendButtonClick(Sender: TObject);
+begin
+  SendCCMidiMessage(0, CCSpin.Value and $FF);
+  SendPGMMidiMessage(0, PGMSpin.Value and $FF);
+end;
+
+function TcaMainForm.CFStringToStr(AString: CFStringRef): string;
 var
   Index: integer;
   Uni: UniChar;
@@ -97,7 +114,7 @@ begin
   Result := AnsiToUtf8(Result);
 end;
 
-function TMainForm.CreateMIDIOutputPort(Client: longword): boolean;
+function TcaMainForm.CreateMIDIOutputPort(Client: longword): boolean;
 var
   Status: OSStatus;
 begin
@@ -110,50 +127,58 @@ begin
   Result := True;
 end;
 
-procedure TMainForm.PopulateDeviceList(ListBox: TCheckListBox; in_out: string);
-var
-  Count, Index: integer;
-  Source: MIDIEndpointRef;
-  PDevName: CFStringRef;
-  DevName: string;
-begin
-  ListBox.Clear;
-  Count := specialize IfThen<integer>(In_Out = 'MidiIn', MIDIGetNumberOfSources, MIDIGetNumberOfDestinations);
-  if Count > 0 then
-  begin
-    for Index := 0 to Count - 1 do
-    begin
-      Source := specialize IfThen<MIDIEndpointRef>(In_Out = 'MidiIn', MIDIGetSource(Index), MIDIGetDestination(Index));
-      MIDIObjectGetStringProperty(Source, kMIDIPropertyName, PDevName);
-      DevName := CFStringToStr(PDevName);
-      if DevName <> '' then
-        ListBox.items.Add(DevName);
-    end;
-  end;
-end;
-
-procedure TMainForm.SendCombinedCCAndPGM(Channel, CCValue, PGMValue: byte);
-var
-  Destination: MIDIEndpointRef;
-  Packet: MIDIPacket;
-  PacketList: MIDIPacketList;
-  Result: OSStatus;
+function TcaMainForm.GetDestination(Index: integer; out Destination: MIDIEndpointRef): boolean;
 begin
   Destination := MIDIGetDestination(MidiOutDevices.ItemIndex);
+  Result := True;
   if Destination = 0 then
   begin
     ShowMessage('No MIDI Destination available');
-    Exit;
+    Result := False;
   end;
+end;
 
-  Packet.TimeStamp := 0; // Send immediately
-  Packet.length := 5;
-  Packet.Data[0] := $B0 or (Channel and $0F); // CC status
-  Packet.Data[1] := 0;  // CC number (0 in this case)
-  Packet.Data[2] := CCValue;
-  Packet.Data[3] := $C0 or (Channel and $0F); // Program Change status
-  Packet.Data[4] := PGMValue;
+procedure TcaMainForm.SendCCMidiMessage(Channel, CCValue: byte);
+var
+  Destination: MIDIEndpointRef;
+  Packet: MIDIPacket;
+begin
+  if GetDestination(MidiOutDevices.ItemIndex, Destination) then
+  begin
+    // Build packet
+    Packet.TimeStamp := 0; // Send immediately
+    Packet.length := 3;
+    Packet.Data[0] := $B0 or (Channel and $0F); // CC status
+    Packet.Data[1] := 0;  // CC number (0 in this case)
+    Packet.Data[2] := CCValue;
+    // Send MIDI data
+    SendMidiPacket(Destination, Packet);
+  end;
+end;
 
+procedure TcaMainForm.SendPGMMidiMessage(Channel, PGMValue: byte);
+var
+  Destination: MIDIEndpointRef;
+  Packet: MIDIPacket;
+begin
+  if GetDestination(MidiOutDevices.ItemIndex, Destination) then
+  begin
+    // Build packet
+    Packet.TimeStamp := 0; // Send immediately
+    Packet.length := 2;
+    Packet.Data[0] := $C0 or (Channel and $0F); // Program Change status
+    Packet.Data[1] := PGMValue;  // CC number (0 in this case)
+    // Send MIDI data
+    SendMidiPacket(Destination, Packet);
+  end;
+end;
+
+procedure TcaMainForm.SendMidiPacket(Destination: MIDIEndpointRef; Packet: MIDIPacket);
+var
+  Result: OSStatus;
+  PacketList: MIDIPacketList;
+begin
+  // Build packetlist
   PacketList.numPackets := 1;
   PacketList.packet[0] := Packet;
 

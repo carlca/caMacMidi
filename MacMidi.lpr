@@ -6,15 +6,14 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, // this includes the LCL widgetset
-  Forms, lazcontrols,uDbg,uMacMidi;
+  camacmidiform, Interfaces, Forms, lazcontrols;
 
 {$R *.res}
 
 begin
   RequireDerivedFormResource := True;
   Application.Initialize;
-  Application.CreateForm(TMainForm,MainForm);
+  Application.CreateForm(TcaMainForm, MainForm);
   Application.Run;
 end.
 

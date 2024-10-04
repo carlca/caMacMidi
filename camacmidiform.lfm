@@ -1,4 +1,4 @@
-object MainForm: TMainForm
+object MainForm: TcaMainForm
   Left = 989
   Height = 291
   Top = 230
@@ -9,6 +9,8 @@ object MainForm: TMainForm
   ClientWidth = 336
   LCLVersion = '3.99.0.0'
   OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   object MidiInDevices: TCheckListBox
     Left = 4
     Height = 120

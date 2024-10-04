@@ -1,0 +1,13 @@
+unit caMidiTypes;
+
+interface
+
+type
+
+  TMidiInOut = (ioIn, ioOut);
+
+implementation
+
+end.
+
+
