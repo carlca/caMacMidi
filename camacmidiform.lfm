@@ -1,11 +1,11 @@
 object caMainForm: TcaMainForm
   Left = 989
-  Height = 291
+  Height = 465
   Top = 230
   Width = 336
   BorderWidth = 4
   Caption = 'MainForm'
-  ClientHeight = 291
+  ClientHeight = 465
   ClientWidth = 336
   LCLVersion = '3.99.0.0'
   OnActivate = FormActivate
@@ -32,17 +32,17 @@ object caMainForm: TcaMainForm
   end
   object ButtonPanel: TPanel
     Left = 4
-    Height = 43
+    Height = 217
     Top = 244
     Width = 328
     Align = alClient
-    ClientHeight = 43
+    ClientHeight = 217
     ClientWidth = 328
     TabOrder = 2
     object SendButton: TButton
       Left = 240
       Height = 25
-      Top = 8
+      Top = 4
       Width = 80
       Caption = 'Send'
       TabOrder = 0
@@ -51,7 +51,7 @@ object caMainForm: TcaMainForm
     object CCSpin: TSpinEditEx
       Left = 32
       Height = 21
-      Top = 12
+      Top = 8
       Width = 50
       MaxLength = 0
       NumbersOnly = True
@@ -65,21 +65,21 @@ object caMainForm: TcaMainForm
     object CCLabel: TLabel
       Left = 8
       Height = 16
-      Top = 14
+      Top = 10
       Width = 18
       Caption = 'CC'
     end
     object PGMLabel: TLabel
       Left = 100
       Height = 16
-      Top = 14
+      Top = 10
       Width = 29
       Caption = 'PGM'
     end
     object PGMSpin: TSpinEditEx
       Left = 136
       Height = 21
-      Top = 12
+      Top = 8
       Width = 50
       MaxLength = 0
       NumbersOnly = True
@@ -88,6 +88,21 @@ object caMainForm: TcaMainForm
       MaxValue = 127
       NullValue = 0
       Value = 0
+    end
+    object ErrorsMemo: TMemo
+      Left = 1
+      Height = 160
+      Top = 56
+      Width = 326
+      Align = alBottom
+      TabOrder = 3
+    end
+    object ErrorsLabel: TLabel
+      Left = 4
+      Height = 16
+      Top = 36
+      Width = 36
+      Caption = 'Errors'
     end
   end
 end

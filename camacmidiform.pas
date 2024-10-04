@@ -17,6 +17,8 @@ type
 
   TcaMainForm = class(TForm)
     CCLabel: TLabel;
+    ErrorsLabel:TLabel;
+    ErrorsMemo:TMemo;
     PGMLabel: TLabel;
     PGMSpin: TSpinEditEx;
     SendButton: TButton;
@@ -31,7 +33,6 @@ type
   private
     { private declarations }
     FOutputPort: longword;
-    function CFStringToStr(AString: CFStringRef): string;
     function CreateMIDIOutputPort(Client: longword): boolean;
     function GetDestination(Index: integer; out Destination: MIDIEndpointRef): boolean;
     procedure SendCCMidiMessage(Channel, CCValue: byte);
@@ -65,6 +66,8 @@ begin
   Midi.GetDevices(ioIn, MidiInDevices.Items);
   Midi.GetDevices(ioOut, MidiOutDevices.Items);
 
+  ToDo - Move this to Intf!
+
   Result := MIDIClientCreate(CFSTR('MIDI CLIENT'), nil, nil, midiClient);
   if (Result <> noErr) then
     ShowMessage('Error creating MIDI client: ' + GetMacOSStatusErrorString(Result) + '  ' + GetMacOSStatusCommentString(Result));
@@ -90,25 +93,6 @@ procedure TcaMainForm.SendButtonClick(Sender: TObject);
 begin
   SendCCMidiMessage(0, CCSpin.Value and $FF);
   SendPGMMidiMessage(0, PGMSpin.Value and $FF);
-end;
-
-function TcaMainForm.CFStringToStr(AString: CFStringRef): string;
-var
-  Index: integer;
-  Uni: UniChar;
-begin
-  if AString = nil then
-  begin
-    Result := '';
-    Exit;
-  end;
-  Result := '';
-  for Index := 0 to CFStringGetLength(AString) - 1 do
-  begin
-    Uni := CFStringGetCharacterAtIndex(AString, Index);
-    Result := Result + Chr(Uni);
-  end;
-  Result := AnsiToUtf8(Result);
 end;
 
 function TcaMainForm.CreateMIDIOutputPort(Client: longword): boolean;

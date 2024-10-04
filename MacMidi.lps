@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="17"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="47"/>
       </Unit0>
       <Unit1>
         <Filename Value="camacmidiform.pas"/>
@@ -19,8 +19,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="caMacMidiForm"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="16" Y="12"/>
-        <UsageCount Value="23"/>
+        <TopLine Value="50"/>
+        <CursorPos X="8" Y="69"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -169,22 +170,24 @@
       <Unit20>
         <Filename Value="midiintf/camidimac.pas"/>
         <UnitName Value="caMidiMac"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="19"/>
-        <CursorPos X="43" Y="41"/>
-        <UsageCount Value="10"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="22"/>
+        <CursorPos X="43" Y="59"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="midiintf/camidi.pas"/>
+        <UnitName Value="caMidi"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="70" Y="3"/>
+        <CursorPos X="3" Y="12"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="midiintf/camidiintf.pas"/>
         <UnitName Value="caMidiIntf"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="26" Y="18"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -218,7 +221,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit27>
       <Unit28>
@@ -229,7 +232,7 @@
         <UsageCount Value="10"/>
       </Unit28>
     </Units>
-    <JumpHistory Count="11" HistoryIndex="10">
+    <JumpHistory Count="26" HistoryIndex="25">
       <Position1>
         <Filename Value="camacmidiform.pas"/>
         <Caret Line="38" Column="43" TopLine="15"/>
@@ -274,6 +277,66 @@
         <Filename Value="midiintf/camidi.pas"/>
         <Caret Line="3" Column="70"/>
       </Position11>
+      <Position12>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="34" Column="27" TopLine="26"/>
+      </Position12>
+      <Position13>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="95" Column="35" TopLine="58"/>
+      </Position13>
+      <Position14>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="34" TopLine="12"/>
+      </Position14>
+      <Position15>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="94" Column="42" TopLine="68"/>
+      </Position15>
+      <Position16>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="34" Column="34" TopLine="12"/>
+      </Position16>
+      <Position17>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="75" Column="30" TopLine="38"/>
+      </Position17>
+      <Position18>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="94" Column="42" TopLine="57"/>
+      </Position18>
+      <Position19>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="33" Column="34" TopLine="12"/>
+      </Position19>
+      <Position20>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="34" Column="34" TopLine="12"/>
+      </Position20>
+      <Position21>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="75" Column="30" TopLine="38"/>
+      </Position21>
+      <Position22>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="94" Column="42" TopLine="57"/>
+      </Position22>
+      <Position23>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="34" Column="36" TopLine="12"/>
+      </Position23>
+      <Position24>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="77" TopLine="38"/>
+      </Position24>
+      <Position25>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="59" Column="86" TopLine="48"/>
+      </Position25>
+      <Position26>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="60" Column="86" TopLine="49"/>
+      </Position26>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

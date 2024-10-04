@@ -1,4 +1,4 @@
-unit camidi;
+unit caMidi;
 
 interface
 
