@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/Applications/Lazarus_trunk/fpc/bin/x86_64-darwin/fpc.sh" Date="1727724192"/>
-  <Params Value="-MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -k-weak_framework -kAppKit -k-weak_framework -kUserNotifications -l -vewnhibq -Fi/Users/carlcaulkett/Code/FPC/MacMidi/lib/x86_64-darwin -Fu/Users/carlcaulkett/Code/FPC/MacMidi/ -Fu/Users/carlcaulkett/Code/FPC/MacMidi/midiintf -Fu/Applications/Lazarus_trunk/lazarus/components/lazcontrols/lib/x86_64-darwin/cocoa -Fu/Applications/Lazarus_trunk/lazarus/lcl/units/x86_64-darwin/cocoa -Fu/Applications/Lazarus_trunk/lazarus/lcl/units/x86_64-darwin -Fu/Applications/Lazarus_trunk/lazarus/components/freetype/lib/x86_64-darwin -Fu/Applications/Lazarus_trunk/lazarus/components/lazutils/lib/x86_64-darwin -Fu/Applications/Lazarus_trunk/lazarus/packager/units/x86_64-darwin -FU/Users/carlcaulkett/Code/FPC/MacMidi/lib/x86_64-darwin/ -FE/Users/carlcaulkett/Code/FPC/MacMidi/ -o/Users/carlcaulkett/Code/FPC/MacMidi/MacMidi -dLCL -dLCLcocoa -WM11.0 -vd -gh -gl MacMidi.lpr"/>
-</CONFIG>
