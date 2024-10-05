@@ -137,6 +137,11 @@ begin
   Device := SelectDevice(DeviceIndex);
   if Device <> 0 then
   begin
+    db('');
+    db('SendPGM');
+    db('DeviceIndex', DeviceIndex);
+    db('Device', Device);
+    db('PGM', PGM);
     // Build packet
     Packet.TimeStamp := 0; // Send immediately
     Packet.length := 2;

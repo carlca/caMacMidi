@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="12"/>
     <BuildModes Active="Default"/>
-    <Units Count="29">
+    <Units Count="36">
       <Unit0>
         <Filename Value="MacMidi.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="17"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="58"/>
       </Unit0>
       <Unit1>
         <Filename Value="camacmidiform.pas"/>
@@ -18,14 +18,21 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="caMacMidiForm"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="50"/>
-        <CursorPos X="8" Y="69"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="17"/>
+        <CursorPos X="82" Y="20"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
+        <Filename Value="camacmidiform.lfm"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="21"/>
+        <UsageCount Value="33"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit2>
+      <Unit3>
         <Filename Value="umacmidiform.pas"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
@@ -33,41 +40,41 @@
         <UnitName Value="ccMacMidiForm"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="8" Y="10"/>
-        <UsageCount Value="41"/>
-      </Unit2>
-      <Unit3>
+        <UsageCount Value="40"/>
+      </Unit3>
+      <Unit4>
         <Filename Value="uMacMidiForm.lfm"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="19"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit3>
-      <Unit4>
+      </Unit4>
+      <Unit5>
         <Filename Value="udbg.pas"/>
         <UnitName Value="uDbg"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="39"/>
-      </Unit4>
-      <Unit5>
+        <UsageCount Value="38"/>
+      </Unit5>
+      <Unit6>
         <Filename Value="midiintf/umidiintf.pas"/>
         <UnitName Value="uMidiIntf"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="7"/>
-        <UsageCount Value="23"/>
-      </Unit5>
-      <Unit6>
+        <UsageCount Value="22"/>
+      </Unit6>
+      <Unit7>
         <Filename Value="midiintf/umidimac.pas"/>
         <UnitName Value="uMidiMac"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="16"/>
-        <UsageCount Value="24"/>
-      </Unit6>
-      <Unit7>
+        <UsageCount Value="23"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="../midi/umacmidi.pas"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
@@ -76,267 +83,316 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="143"/>
         <CursorPos X="103" Y="166"/>
-        <UsageCount Value="21"/>
-      </Unit7>
-      <Unit8>
+        <UsageCount Value="20"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="../midi/udbg.pas"/>
         <UnitName Value="uDbg"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12"/>
         <CursorPos Y="34"/>
-        <UsageCount Value="20"/>
-      </Unit8>
-      <Unit9>
+        <UsageCount Value="19"/>
+      </Unit9>
+      <Unit10>
         <Filename Value="/Applications/Lazarus_trunk/fpcsrc/packages/univint/src/MIDIServices.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="620"/>
         <CursorPos X="3" Y="622"/>
-        <UsageCount Value="9"/>
-      </Unit9>
-      <Unit10>
+        <UsageCount Value="12"/>
+      </Unit10>
+      <Unit11>
         <Filename Value="umidiintf.pas"/>
         <UnitName Value="uMidiIntf"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="29" Y="9"/>
-        <UsageCount Value="21"/>
-      </Unit10>
-      <Unit11>
+        <UsageCount Value="20"/>
+      </Unit11>
+      <Unit12>
         <Filename Value="midiintf/umidiimpl.pas"/>
         <UnitName Value="uMidiImpl"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="90" Y="15"/>
-        <UsageCount Value="14"/>
-      </Unit11>
-      <Unit12>
+        <UsageCount Value="13"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="/Applications/Lazarus_trunk/fpcsrc/rtl/unix/classes.pp"/>
         <UnitName Value="Classes"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos X="3" Y="45"/>
-        <UsageCount Value="10"/>
-      </Unit12>
-      <Unit13>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="/Applications/Lazarus_trunk/fpcsrc/rtl/unix/sysutils.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="309"/>
         <CursorPos Y="309"/>
-        <UsageCount Value="10"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="9"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1566"/>
         <CursorPos X="25" Y="1602"/>
-        <UsageCount Value="10"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="9"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="/Applications/Lazarus_trunk/fpcsrc/packages/rtl-objpas/src/inc/system.uitypes.pp"/>
         <UnitName Value="System.UITypes"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="508"/>
         <CursorPos X="3" Y="508"/>
-        <UsageCount Value="10"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="MidiIntf/uMidiTyoes.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit16>
       <Unit17>
+        <Filename Value="MidiIntf/uMidiTyoes.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="midiintf/uMidiTypes.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="11"/>
-        <UsageCount Value="11"/>
-      </Unit17>
-      <Unit18>
+        <UsageCount Value="10"/>
+      </Unit18>
+      <Unit19>
         <Filename Value="ccmacmidiform.lfm"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="19"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit18>
-      <Unit19>
+      </Unit19>
+      <Unit20>
         <Filename Value="ccmacmidiform.pas"/>
         <ComponentName Value="MainForm"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="171"/>
         <CursorPos X="93" Y="184"/>
-        <UsageCount Value="20"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="midiintf/camidimac.pas"/>
-        <UnitName Value="caMidiMac"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="22"/>
-        <CursorPos X="43" Y="59"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="19"/>
       </Unit20>
       <Unit21>
+        <Filename Value="midiintf/camidimac.pas"/>
+        <UnitName Value="caMidiMac"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="141" Y="30"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="midiintf/camidi.pas"/>
         <UnitName Value="caMidi"/>
         <EditorIndex Value="1"/>
         <CursorPos X="3" Y="12"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit21>
-      <Unit22>
-        <Filename Value="midiintf/camidiintf.pas"/>
-        <UnitName Value="caMidiIntf"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="26" Y="18"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit22>
       <Unit23>
+        <Filename Value="midiintf/camidiintf.pas"/>
+        <UnitName Value="caMidiIntf"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="15" Y="15"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="midiintf/camiditypes.pas"/>
         <UnitName Value="caMidiTypes"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="6" Y="6"/>
-        <UsageCount Value="10"/>
-      </Unit23>
-      <Unit24>
-        <Filename Value="midiintf/camidilinux.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit24>
       <Unit25>
-        <Filename Value="midiintf/camidiwin.pas"/>
+        <Filename Value="midiintf/camidilinux.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit25>
       <Unit26>
-        <Filename Value="cadbg.pas"/>
-        <UnitName Value="caDbg"/>
+        <Filename Value="midiintf/camidiwin.pas"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="8"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit26>
       <Unit27>
-        <Filename Value="camacmidiform.lfm"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="21"/>
-        <UsageCount Value="22"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <Filename Value="cadbg.pas"/>
+        <UnitName Value="caDbg"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="17"/>
+        <CursorPos X="144" Y="58"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
       </Unit27>
       <Unit28>
         <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/application.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1409"/>
-        <CursorPos X="71" Y="1413"/>
+        <TopLine Value="2242"/>
+        <CursorPos Y="2264"/>
         <UsageCount Value="10"/>
       </Unit28>
+      <Unit29>
+        <Filename Value="/Applications/Lazarus_trunk/fpcsrc/packages/univint/src/MacTypes.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="229"/>
+        <CursorPos X="17" Y="253"/>
+        <UsageCount Value="9"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/components/lazcontrols/spinex.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="246"/>
+        <CursorPos Y="274"/>
+        <UsageCount Value="10"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2283"/>
+        <CursorPos Y="2304"/>
+        <UsageCount Value="10"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/buttoncontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="10"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/buttons.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="148"/>
+        <CursorPos Y="170"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5454"/>
+        <CursorPos X="99" Y="5467"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="/Applications/Lazarus_trunk/lazarus/lcl/include/customlistbox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="622"/>
+        <CursorPos Y="653"/>
+        <UsageCount Value="10"/>
+      </Unit35>
     </Units>
-    <JumpHistory Count="26" HistoryIndex="25">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="38" Column="43" TopLine="15"/>
+        <Caret Line="68" TopLine="56"/>
       </Position1>
       <Position2>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="133" Column="41" TopLine="111"/>
+        <Caret Line="70" Column="50" TopLine="45"/>
       </Position2>
       <Position3>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="38" Column="33" TopLine="16"/>
       </Position3>
       <Position4>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="67" Column="23" TopLine="30"/>
+        <Caret Line="121" Column="5" TopLine="77"/>
       </Position4>
       <Position5>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="68" Column="23" TopLine="31"/>
+        <Caret Line="53" Column="85" TopLine="48"/>
       </Position5>
       <Position6>
-        <Filename Value="camacmidiform.pas"/>
-        <Caret Line="133" Column="41" TopLine="96"/>
+        <Filename Value="midiintf/camidimac.pas"/>
+        <Caret Line="105" TopLine="61"/>
       </Position6>
       <Position7>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="38" TopLine="16"/>
+        <Caret Line="70" Column="21" TopLine="52"/>
       </Position7>
       <Position8>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="66" TopLine="29"/>
+        <Caret Line="37" Column="15" TopLine="37"/>
       </Position8>
       <Position9>
-        <Filename Value="midiintf/camidiintf.pas"/>
-        <Caret Line="18" Column="26"/>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="120" Column="26" TopLine="99"/>
       </Position9>
       <Position10>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="67" Column="7" TopLine="44"/>
+        <Caret Line="114" Column="9" TopLine="102"/>
       </Position10>
       <Position11>
-        <Filename Value="midiintf/camidi.pas"/>
-        <Caret Line="3" Column="70"/>
+        <Filename Value="camacmidiform.pas"/>
+        <Caret Line="94" Column="9" TopLine="94"/>
       </Position11>
       <Position12>
-        <Filename Value="camacmidiform.pas"/>
-        <Caret Line="34" Column="27" TopLine="26"/>
+        <Filename Value="midiintf/camidimac.pas"/>
+        <Caret Line="125" Column="72" TopLine="116"/>
       </Position12>
       <Position13>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="95" Column="35" TopLine="58"/>
+        <Caret Line="79" Column="28" TopLine="79"/>
       </Position13>
       <Position14>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="34" TopLine="12"/>
       </Position14>
       <Position15>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="94" Column="42" TopLine="68"/>
+        <Caret Line="34" Column="16"/>
       </Position15>
       <Position16>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="34" Column="34" TopLine="12"/>
+        <Caret Line="60" Column="43" TopLine="23"/>
       </Position16>
       <Position17>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="75" Column="30" TopLine="38"/>
+        <Caret Line="134" Column="49" TopLine="104"/>
       </Position17>
       <Position18>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="94" Column="42" TopLine="57"/>
+        <Caret Line="38" Column="36" TopLine="38"/>
       </Position18>
       <Position19>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="33" Column="34" TopLine="12"/>
+        <Caret Line="144" Column="57" TopLine="112"/>
       </Position19>
       <Position20>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="34" Column="34" TopLine="12"/>
       </Position20>
       <Position21>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="75" Column="30" TopLine="38"/>
+        <Caret Line="121" Column="78" TopLine="112"/>
       </Position21>
       <Position22>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="94" Column="42" TopLine="57"/>
       </Position22>
       <Position23>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="34" Column="36" TopLine="12"/>
+        <Caret Line="34" Column="16"/>
       </Position23>
       <Position24>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="77" TopLine="38"/>
+        <Caret Line="60" Column="14" TopLine="23"/>
       </Position24>
       <Position25>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="59" Column="86" TopLine="48"/>
+        <Caret Line="146" Column="31" TopLine="109"/>
       </Position25>
       <Position26>
         <Filename Value="camacmidiform.pas"/>
-        <Caret Line="60" Column="86" TopLine="49"/>
+        <Caret Line="151" Column="33" TopLine="112"/>
       </Position26>
+      <Position27>
+        <Filename Value="midiintf/camidimac.pas"/>
+        <Caret Line="100" Column="7" TopLine="100"/>
+      </Position27>
+      <Position28>
+        <Filename Value="midiintf/camidimac.pas"/>
+        <Caret Line="120" Column="9" TopLine="83"/>
+      </Position28>
+      <Position29>
+        <Filename Value="midiintf/camidimac.pas"/>
+      </Position29>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -344,14 +400,13 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
+    <Watches>
       <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="/Applications/Lazarus_trunk/lazarus/lcl/include/application.inc"/>
-        <Line Value="2264"/>
+        <Expression Value="Packet"/>
       </Item>
-    </BreakPoints>
+      <Item>
+        <Expression Value="PacketList"/>
+      </Item>
+    </Watches>
   </Debugging>
 </CONFIG>

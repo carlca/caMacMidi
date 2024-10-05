@@ -14,6 +14,7 @@ procedure db(val: Integer);
 procedure db(id: string; val: Integer);
 procedure db(IsTrue: Boolean);
 procedure db(id: string; IsTrue: Boolean);
+procedure db;
 
 implementation
 
@@ -50,6 +51,11 @@ end;
 procedure db(id: string; IsTrue: Boolean);
 begin
   db(id, specialize IfThen<string>(IsTrue, 'True', 'False'));
+end;
+
+procedure db;
+begin
+  SendDebug('----------------------------------------------------------------------------------------------------------------------------------');
 end;
 
 end.
