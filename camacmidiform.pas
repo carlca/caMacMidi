@@ -17,7 +17,7 @@ type
 
   TcaMainForm = class(TForm)
     CCLabel: TLabel;
-    MidiIntfCheck:TCheckBox;
+    MidiIntfCheck: TCheckBox;
     ErrorsLabel: TLabel;
     ErrorsMemo: TMemo;
     PGMLabel: TLabel;
@@ -29,9 +29,6 @@ type
     CCSpin: TSpinEditEx;
     procedure FormActivate(Sender: TObject);
     procedure SendButtonClick(Sender: TObject);
-  private
-    { private declarations }
-    FOutputPort: longword;
   public
     { public declarations }
   end;
@@ -46,20 +43,15 @@ implementation
 { TcaMainForm }
 
 procedure TcaMainForm.FormActivate(Sender: TObject);
-var
-  MidiClient: longword;
 begin
   Midi.GetDevices(ioIn, MidiInDevices.Items);
   Midi.GetDevices(ioOut, MidiOutDevices.Items);
-  MidiClient := Midi.CreateMidiClient(ErrorsMemo.Lines);
-  Midi.CreateMidiInputPort(MidiClient, ErrorsMemo.Lines);
-  FOutputPort := Midi.CreateMidiOutputPort(MidiClient, ErrorsMemo.Lines);
 end;
 
 procedure TcaMainForm.SendButtonClick(Sender: TObject);
 begin
-  Midi.SendCC(MidiOutDevices.ItemIndex, FOutputPort, 0, CCSpin.Value and $FF, ErrorsMemo.Lines);
-  Midi.SendPGM(MidiOutDevices.ItemIndex, FOutputPort, 0, PGMSpin.Value and $FF, ErrorsMemo.Lines);
+  Midi.SendCC(MidiOutDevices.ItemIndex, 0, CCSpin.Value and $FF, ErrorsMemo.Lines);
+  Midi.SendPGM(MidiOutDevices.ItemIndex, 0, PGMSpin.Value and $FF, ErrorsMemo.Lines);
 end;
 
 end.
