@@ -34,18 +34,21 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="LazControls"/>
+        <PackageName Value="calibraryrun"/>
       </Item1>
       <Item2>
-        <PackageName Value="LazControlDsgn"/>
+        <PackageName Value="LazControls"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="LazControlDsgn"/>
       </Item3>
+      <Item4>
+        <PackageName Value="LCL"/>
+      </Item4>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="6">
       <Unit0>
         <Filename Value="camacmidi.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -62,6 +65,21 @@
         <Filename Value="camacmidiform.lfm"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="../camidi/camidi.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="caMidi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../camidi/camidiintf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="caMidiIntf"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../camidi/camiditypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="caMidiTypes"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -71,7 +89,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="camidi"/>
+      <OtherUnitFiles Value="../camidi"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

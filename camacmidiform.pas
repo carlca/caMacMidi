@@ -8,8 +8,8 @@ interface
 
 uses
   Classes, ExtCtrls, SpinEx, StdCtrls, SysUtils, FileUtil, Forms, Controls, Graphics,
-  Dialogs, CheckLst, MacOsAll,
-  caDbg, caMidi, caMidiIntf, caMidiTypes;
+  Dialogs, CheckLst,
+  caMidi, caMidiIntf, caMidiTypes;
 
 type
 
@@ -43,6 +43,7 @@ implementation
 { TcaMainForm }
 
 procedure TcaMainForm.FormActivate(Sender: TObject);
+
 begin
   Midi.GetDevices(ioIn, MidiInDevices.Items);
   Midi.GetDevices(ioOut, MidiOutDevices.Items);

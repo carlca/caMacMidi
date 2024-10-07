@@ -6,7 +6,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  camacmidiform, Interfaces, Forms, lazcontrols;
+  camacmidiform, caMidi,caMidiIntf,caMidiTypes,Interfaces, Forms, lazcontrols;
 
 {$R *.res}
 
