@@ -6,9 +6,11 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  camacmidiform, caMidi,caMidiIntf,caMidiTypes,Interfaces, Forms, lazcontrols;
+  camacmidiform,
+  caMidi,caMidiIntf,caMidiTypes,Interfaces,
+  Forms;
 
-{$R *.res}
+  {$R *.res}
 
 begin
   RequireDerivedFormResource := True;
@@ -16,4 +18,3 @@ begin
   Application.CreateForm(TcaMainForm, MainForm);
   Application.Run;
 end.
-

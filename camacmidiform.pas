@@ -2,8 +2,6 @@ unit caMacMidiForm;
 
 {$mode objfpc}{$H+}
 
-{$linkframework CoreMidi}
-
 interface
 
 uses
@@ -43,10 +41,11 @@ implementation
 { TcaMainForm }
 
 procedure TcaMainForm.FormActivate(Sender: TObject);
-
 begin
-  Midi.GetDevices(ioIn, MidiInDevices.Items);
-  Midi.GetDevices(ioOut, MidiOutDevices.Items);
+  if not Assigned(Midi) then
+    ShowMessage('not Assigned(Midi)');
+  Midi.GetDevices(ioIn, MidiInDevices.Items, ErrorsMemo.Lines);
+  Midi.GetDevices(ioOut, MidiOutDevices.Items, ErrorsMemo.Lines);
 end;
 
 procedure TcaMainForm.SendButtonClick(Sender: TObject);
