@@ -7,7 +7,7 @@ interface
 uses
   Classes, ExtCtrls, SpinEx, StdCtrls, SysUtils, FileUtil, Forms, Controls, Graphics,
   Dialogs, CheckLst,
-  caMidi, caMidiIntf, caMidiTypes;
+  caDbg, caMidi, caMidiIntf, caMidiTypes;
 
 type
 
@@ -26,6 +26,7 @@ type
     ButtonPanel: TPanel;
     CCSpin: TSpinEditEx;
     procedure FormActivate(Sender: TObject);
+    procedure FormDestroy(Sender:TObject);
     procedure SendButtonClick(Sender: TObject);
   public
     { public declarations }
@@ -46,6 +47,11 @@ begin
     ShowMessage('not Assigned(Midi)');
   Midi.GetDevices(ioIn, MidiInDevices.Items, ErrorsMemo.Lines);
   Midi.GetDevices(ioOut, MidiOutDevices.Items, ErrorsMemo.Lines);
+end;
+
+procedure TcaMainForm.FormDestroy(Sender:TObject);
+begin
+  db('FormDestroy');
 end;
 
 procedure TcaMainForm.SendButtonClick(Sender: TObject);

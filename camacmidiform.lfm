@@ -9,6 +9,7 @@ object caMainForm: TcaMainForm
   ClientWidth = 406
   LCLVersion = '3.99.0.0'
   OnActivate = FormActivate
+  OnDestroy = FormDestroy
   object MidiInDevices: TCheckListBox
     Left = 4
     Height = 120
